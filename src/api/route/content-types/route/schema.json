@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "routes",
+  "info": {
+    "singularName": "route",
+    "pluralName": "routes",
+    "displayName": "Route",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "grade": {
+      "type": "string",
+      "required": true,
+      "regex": "^(4\\+?|5\\+?|[6-9][abc]\\+?|[6-9][abc]?\\+?)$"
+    },
+    "topo_routes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::topo-route.topo-route",
+      "mappedBy": "route"
+    },
+    "height": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "url_8anu": {
+      "type": "text"
+    },
+    "ascents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ascent.ascent",
+      "mappedBy": "route"
+    },
+    "bolters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::bolter.bolter",
+      "mappedBy": "routes"
+    }
+  }
+}

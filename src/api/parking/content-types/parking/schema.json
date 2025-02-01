@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "parkings",
+  "info": {
+    "singularName": "parking",
+    "pluralName": "parkings",
+    "displayName": "Parking",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "ubication": {
+      "type": "text"
+    },
+    "crag": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::crag.crag",
+      "inversedBy": "parkings"
+    },
+    "capacity": {
+      "type": "integer"
+    }
+  }
+}

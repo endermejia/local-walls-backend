@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "topos",
+  "info": {
+    "singularName": "topo",
+    "pluralName": "topos",
+    "displayName": "Topo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "crag": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::crag.crag",
+      "inversedBy": "topos"
+    },
+    "topo_routes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::topo-route.topo-route",
+      "mappedBy": "topo"
+    }
+  }
+}

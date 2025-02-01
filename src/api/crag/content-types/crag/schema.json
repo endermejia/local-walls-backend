@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "crags",
+  "info": {
+    "singularName": "crag",
+    "pluralName": "crags",
+    "displayName": "Crag",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "parkings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::parking.parking",
+      "mappedBy": "crag"
+    },
+    "ubication": {
+      "type": "text"
+    },
+    "approach": {
+      "type": "integer"
+    },
+    "topos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::topo.topo",
+      "mappedBy": "crag"
+    },
+    "zone": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::zone.zone",
+      "inversedBy": "crags"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ascents",
+  "info": {
+    "singularName": "ascent",
+    "pluralName": "ascents",
+    "displayName": "Ascent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "grade": {
+      "type": "string",
+      "regex": "^(4\\+?|5\\+?|[6-9][abc]\\+?|[6-9][abc]?\\+?)$"
+    },
+    "date": {
+      "type": "date"
+    },
+    "type": {
+      "type": "string",
+      "regex": "redpoint|flash|onsight|wish"
+    },
+    "route": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::route.route",
+      "inversedBy": "ascents"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "ascents"
+    }
+  }
+}

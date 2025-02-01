@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "topo_routes",
+  "info": {
+    "singularName": "topo-route",
+    "pluralName": "topo-routes",
+    "displayName": "TopoRoute"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "number": {
+      "type": "integer"
+    },
+    "route": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::route.route",
+      "inversedBy": "topo_routes"
+    },
+    "topo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::topo.topo",
+      "inversedBy": "topo_routes"
+    }
+  }
+}
