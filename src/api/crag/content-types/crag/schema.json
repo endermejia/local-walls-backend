@@ -33,7 +33,7 @@
       "target": "api::parking.parking",
       "mappedBy": "crag"
     },
-    "ubication": {
+    "location": {
       "type": "text"
     },
     "approach": {

@@ -457,12 +457,12 @@ export interface ApiCragCrag extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::crag.crag'> &
       Schema.Attribute.Private;
+    location: Schema.Attribute.Text;
     name: Schema.Attribute.String;
     parkings: Schema.Attribute.Relation<'oneToMany', 'api::parking.parking'>;
     photos: Schema.Attribute.Media<'images' | 'files', true>;
     publishedAt: Schema.Attribute.DateTime;
     topos: Schema.Attribute.Relation<'oneToMany', 'api::topo.topo'>;
-    ubication: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -524,9 +524,9 @@ export interface ApiParkingParking extends Struct.CollectionTypeSchema {
       'api::parking.parking'
     > &
       Schema.Attribute.Private;
+    location: Schema.Attribute.Text;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    ubication: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -640,6 +640,7 @@ export interface ApiTopoTopo extends Struct.CollectionTypeSchema {
 export interface ApiZoneZone extends Struct.CollectionTypeSchema {
   collectionName: 'zones';
   info: {
+    description: '';
     displayName: 'Zone';
     pluralName: 'zones';
     singularName: 'zone';
